@@ -1,0 +1,32 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Detail Contact</h2>
+
+            <%# Yang akan terjadi apabila data tidak exist atau salah %> 
+            <% if (!contact) { %>
+
+                <div class="alert alert-dark fw-bold" role="alert">
+                    DATA <%= nama %>  NOT FOUND! <a href="/contact" class="alert-link fw-normal">back to contact</a>
+                  </div>
+             
+            <%# Jika data benar %> 
+            <% } else { %>
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Name : <%= contact.nama %> </h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Mobile : <%= contact.mobile %></h6>
+                  <h6 class="card-subtitle mb-2 text-muted"">Email : <%= contact.email %></h6>
+                  <br/>
+                   <!-- Button untuk kembali ke halaman contact  -->
+                  <a href="/contact" class="btn btn-secondary btn" 
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; 
+                  --bs-btn-font-size: .75rem;">back</a>
+                  
+                </div>
+              </div>
+              <% } %> 
+        </div>
+    </div>
+</div>
